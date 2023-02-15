@@ -52,3 +52,8 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
+.extra-funcs {
+    display: flex;
+    gap: 2px;
+}
