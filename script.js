@@ -30,3 +30,7 @@ digitButtons.addEventListener('click', updateDisplay);
 //event listener for the operator buttons
 let operatorButtons = document.querySelector(".operators");
 operatorButtons.addEventListener('click', chooseOperator);
+
+//event listener for extra function buttons
+let extraFuncs = document.querySelector(".extra-funcs");
+extraFuncs.addEventListener('click', executeExtraFunc);
