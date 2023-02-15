@@ -22,3 +22,7 @@ let currentTotal;
 
 //storing display value for continuous future use
 let displayValue = document.getElementById("display-value");
+
+//event listener for the digit buttons
+let digitButtons = document.querySelector(".digits");
+digitButtons.addEventListener('click', updateDisplay);
