@@ -57,3 +57,10 @@ html, body {
     display: flex;
     gap: 2px;
 }
+
+.digits {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    gap: 2px;
+}
