@@ -1,7 +1,30 @@
-
-
-
-
+function operate(operator, num1, num2)
+{
+    let currentCalcTotal;
+    switch(operator)
+    {
+        case '+':
+            currentCalcTotal = num1 + num2;
+            break;
+            
+        case '-':
+            currentCalcTotal = num1 -  num2;
+            break;
+        case '*':
+            currentCalcTotal = num1 * num2;
+            break;
+        case '/':
+            currentCalcTotal = num1 / num2;
+            if (!isFinite(currentCalcTotal))
+            {
+                currentCalcTotal = NaN;
+            }
+            break;
+    }
+    currentTotal = +currentCalcTotal.toFixed(6);
+    calculateNumbers.length = 0;
+    calculateNumbers.push(currentTotal);
+}
 
 
 
