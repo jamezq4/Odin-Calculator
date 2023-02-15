@@ -17,3 +17,11 @@ html, body {
     position: relative;
     text-align: center;
 }
+
+/* aligning all calculator content with flexbox */
+.calc-content {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    font-family: 'Roboto', sans-serif;
+}
