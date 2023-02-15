@@ -25,3 +25,18 @@ html, body {
     padding: 12px;
     font-family: 'Roboto', sans-serif;
 }
+
+.display {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 410px;
+    height: 70px;
+    border: 4px solid black;
+    text-align: center;
+    font-size: 50px;
+    padding: 5px;
+    background-color: white;
+    margin-bottom: 10px;
+
+}
