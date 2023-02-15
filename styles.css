@@ -85,3 +85,16 @@ button {
 button:hover {
     background-color: white;
 }
+
+/* adding background colors to buttons */
+.extra {
+    background-color: aqua;
+}
+
+.dig {
+    background-color: #7FFF00;
+}
+
+.op {
+    background-color: orange;
+}
