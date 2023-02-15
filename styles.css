@@ -40,3 +40,10 @@ html, body {
     margin-bottom: 10px;
 
 }
+
+.buttons {
+    display: flex;
+    width: 425px;
+    height: 380px;
+    gap: 5px;
+}
