@@ -64,3 +64,8 @@ html, body {
     width: 300px;
     gap: 2px;
 }
+
+.operators {
+    display: flex;
+    flex-wrap: wrap;
+}
