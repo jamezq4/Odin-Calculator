@@ -27,7 +27,43 @@ function operate(operator, num1, num2)
 }
 
 
+function updateDisplay(e)
+{
+    if (e.target.id === 'decimal')
+    {
+        //if we dont currently have a decimal
+        if (!displayValue.textContent.includes(e.target.textContent) && currentNumber.length > 0)
+        {
+            if (currentNumber[0] === '')
+            {
+                currentNumber[0] = '0';
+            }
+            currentNumber.push(e.target.textContent);
+            displayValue.textContent = currentNumber.join("");
+        }
+        else
+        {
+            if (currentNumber.length === 0)
+            {
+                currentNumber[0] = '0';
+            }
 
+            currentNumber.push(e.target.textContent);
+            displayValue.textContent = currentNumber.join("");
+        }
+    }
+
+
+    if (e.target.id === 'digit')
+    {
+        if (currentNumber[0] === '0' && !displayValue.textContent.includes('.'))
+        {
+            currentNumber.length = 0;
+        }
+        currentNumber.push(e.target.textContent);
+        displayValue.textContent = currentNumber.join("");
+    }
+}
 
 
 //array to store current number of pair
