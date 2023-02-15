@@ -26,3 +26,7 @@ let displayValue = document.getElementById("display-value");
 //event listener for the digit buttons
 let digitButtons = document.querySelector(".digits");
 digitButtons.addEventListener('click', updateDisplay);
+
+//event listener for the operator buttons
+let operatorButtons = document.querySelector(".operators");
+operatorButtons.addEventListener('click', chooseOperator);
