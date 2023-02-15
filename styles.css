@@ -82,3 +82,6 @@ button {
     border-radius: 10px;
 }
 
+button:hover {
+    background-color: white;
+}
