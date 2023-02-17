@@ -142,6 +142,15 @@ function chooseOperator(e)
 
 }
 
+function clearAll()
+{
+    displayValue.textContent = '0';
+    currentNumber.length = 0;
+    calculateNumbers.length = 0;
+    currentOperator = '';
+    currentTotal = 0;
+}
+
 function executeExtraFunc(e)
 {
     if (e.target.id === 'clear')
