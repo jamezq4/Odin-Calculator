@@ -202,6 +202,51 @@ function changeNumSign()
     }
 }
 
+function takePercent()
+{
+    let numb;
+
+    if (currentNumber.length > 0)
+    {
+        if (currentNumber.includes('.'))
+        {
+            numb = parseFloat(currentNumber.join(""));
+        }
+        else
+        {
+            numb = Number(currentNumber.join(""));
+        }
+
+        numb = numb / 100;
+        numb = numb.toString();
+
+        currentNumber.length = 0;
+        currentNumber = Array.from(numb);
+
+        displayValue.textContent = numb;
+    }
+    else
+    {
+        if (calculateNumbers.includes(Number(displayValue.textContent)))
+        {
+            numb = calculateNumbers[calculateNumbers.indexOf(Number(displayValue.textContent))];
+        }
+        else if (calculateNumbers.includes(parseFloat(displayValue.textContent)))
+        {
+            numb = calculateNumbers[calculateNumbers.indexOf(parseFloat(displayValue.textContent))];
+        }
+
+        numb = numb / 100;
+        
+
+        calculateNumbers.length = 0;
+        calculateNumbers.push(numb);
+
+        displayValue.textContent = numb.toString();
+    }
+}
+
+
 
 function executeExtraFunc(e)
 {
