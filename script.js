@@ -142,7 +142,25 @@ function chooseOperator(e)
 
 }
 
-
+function executeExtraFunc(e)
+{
+    if (e.target.id === 'clear')
+    {
+        clearAll();
+    }
+    else if(e.target.id === 'pos-neg')
+    {
+        changeNumSign();
+    }
+    else if (e.target.id === 'percentage')
+    {
+        takePercent();
+    }
+    else
+    {
+        deleteLast();
+    }
+}
 
 
 
