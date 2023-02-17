@@ -38,7 +38,12 @@ html, body {
     padding: 5px;
     background-color: white;
     margin-bottom: 10px;
+}
 
+#display-value {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .buttons {
