@@ -151,6 +151,58 @@ function clearAll()
     currentTotal = 0;
 }
 
+function changeNumSign()
+{
+    let numb;
+    if (currentNumber.length > 0)
+    {
+        numb = currentNumber.join("");
+        if (numb.includes('.'))
+        {
+            numb = parseFloat(numb);
+        }
+        else
+        {
+            numb = Number(numb);
+        }
+
+        if (numb != 0)
+        {
+            numb = -numb;
+        }
+
+        numb = numb.toString();
+
+        currentNumber.length = 0;
+        currentNumber = Array.from(numb);
+
+        displayValue.textContent = currentNumber.join("");
+    }
+    else
+    {
+        if (calculateNumbers.includes(Number(displayValue.textContent)))
+        {
+            numb = calculateNumbers[calculateNumbers.indexOf(Number(displayValue.textContent))];
+        }
+        else if(calculateNumbers.includes(parseFloat(displayValue.textContent)))
+        {
+            numb = calculateNumbers[calculateNumbers.indexOf(parseFloat(displayValue.textContent))];
+        }
+
+        if (numb != 0)
+        {
+            numb = -numb;
+        }
+
+        
+        calculateNumbers.length = 0;
+        calculateNumbers.push(numb)
+       
+        displayValue.textContent = numb.toString();
+    }
+}
+
+
 function executeExtraFunc(e)
 {
     if (e.target.id === 'clear')
