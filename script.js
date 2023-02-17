@@ -65,6 +65,86 @@ function updateDisplay(e)
     }
 }
 
+function chooseOperator(e)
+{
+    //will combine all elements of current number into 1 number
+    if (currentNumber.length != 0)
+    {
+        let wholeNumber = '';
+
+        //we typed in an operator and dont currently have one so we want to combine everything in currentNumber
+        for (let i = 0; i < currentNumber.length; i++)
+        {
+            wholeNumber += currentNumber[i];
+        }
+
+        if (wholeNumber.includes("."))
+        {
+            wholeNumber = parseFloat(wholeNumber);
+        }
+        else
+        {
+            wholeNumber = Number(wholeNumber);
+        }
+
+        //this will overwrite the calculateNumbs array when we have a total and press an operator after it
+        if (calculateNumbers.length > 0 && currentOperator === '')
+        {
+            calculateNumbers.length = 0;
+        }
+        calculateNumbers.push(wholeNumber);
+
+        //should clear all the currentNumber items in the array to make space for a new number
+        currentNumber.length = 0;
+    }
+
+
+    if (currentOperator === '')
+    {
+        currentOperator = e.target.textContent;
+    }
+    else
+    {
+        if (calculateNumbers.length === 2)
+        {
+            operate(currentOperator, calculateNumbers[0], calculateNumbers[1]);
+        }
+        else
+        {
+            operate(currentOperator, calculateNumbers[0], calculateNumbers[0]);
+        }
+
+        if (isFinite(currentTotal))
+        {
+            displayValue.textContent = currentTotal;
+        }
+        else
+        {
+            if (e.target.textContent === '=')
+            {
+                displayValue.textContent = 'Uhh...';
+            }
+            else
+            {
+                displayValue.textContent = currentTotal;
+            }
+        }
+    }
+
+    if (e.target.textContent === '=')
+    {
+        currentOperator = '';
+    }
+    else
+    {
+        currentOperator = e.target.textContent;
+    }
+
+}
+
+
+
+
 
 //array to store current number of pair
 let currentNumber = [];
