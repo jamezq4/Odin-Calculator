@@ -246,6 +246,63 @@ function takePercent()
     }
 }
 
+function deleteLast()
+{
+    //for current number
+
+    let currentDisplay = displayValue.textContent;
+
+    if (currentNumber.length > 0)
+    {
+        currentDisplay = currentDisplay.substring(0, currentDisplay.length - 1);
+        currentNumber = currentNumber.slice(0 , -1);
+
+        displayValue.textContent = currentDisplay;
+
+        if (currentDisplay === "")
+        {
+            currentNumber.push('0');
+            displayValue.textContent = '0';
+        }
+    }
+    else
+    {
+        let numb;
+        if (calculateNumbers.includes(Number(displayValue.textContent)))
+        {
+            numb = calculateNumbers[calculateNumbers.indexOf(Number(displayValue.textContent))];
+        }
+        else if (calculateNumbers.includes(parseFloat(displayValue.textContent)))
+        {
+            numb = calculateNumbers[calculateNumbers.indexOf(parseFloat(displayValue.textContent))];
+        }
+
+        currentDisplay = numb.toString();
+        currentDisplay = currentDisplay.substring(0, currentDisplay.length - 1);
+
+        if (currentDisplay === "")
+        {
+            currentDisplay = '0';
+        }
+
+        displayValue.textContent = currentDisplay;
+
+        if (currentDisplay.includes('.'))
+        {
+            numb = parseFloat(currentDisplay);
+            //PARSING 0.0 CONVERTS IT TO 0, MAYBE TRY ADDING THE NUMBS ONE BY 1.
+        }
+        else
+        {
+            numb = Number(currentDisplay);
+        }
+
+        calculateNumbers.length = 0;
+        calculateNumbers.push(numb);
+    }
+    
+}
+
 
 
 function executeExtraFunc(e)
